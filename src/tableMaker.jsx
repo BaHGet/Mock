@@ -1,7 +1,7 @@
 import SportingGoods from './Sporting-Goods'
 import Electronics from './Electronics'
 
-const tableMaker = ({hide, mocks, onChange, onSubmit}) =>{
+const tableMaker = ({hide, mocks, onChange, onSubmit, reset}) =>{
     
     return(
         <div>
@@ -13,6 +13,7 @@ const tableMaker = ({hide, mocks, onChange, onSubmit}) =>{
             onChange={onChange}
             />
             <button type='button' onClick={onSubmit}>Search</button>
+            <button type='button' onClick={reset}>Reset</button>
             </form>
 
             <p>

@@ -58,6 +58,18 @@ function App() {
     setMocks(mocks.filter(obj => obj.name.toLowerCase() === input.toLowerCase()))
   }
 
+  const handlereset = (e) =>{
+    ((document.querySelectorAll("input"))[0]).value ='';
+    ((document.querySelectorAll("input"))[1]).checked =false;
+    setMocks([
+      {category: "Sporting Goods", price: "$49.99", stocked: true, name: "Football"},
+      {category: "Sporting Goods", price: "$9.99", stocked: true, name: "Baseball"},
+      {category: "Sporting Goods", price: "$29.99", stocked: false, name: "Basketball"},
+      {category: "Electronics", price: "$99.99", stocked: true, name: "iPod Touch"},
+      {category: "Electronics", price: "$399.99", stocked: false, name: "iPhone 5"},
+      {category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 7"}
+    ])
+  }
 
 
   return (
@@ -65,7 +77,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-      <TableMaker hide={hide} mocks={mocks} onChange={handleChange} onSubmit={handleSubmit} />
+      <TableMaker hide={hide} mocks={mocks} onChange={handleChange} onSubmit={handleSubmit} reset={handlereset} />
     </div>
   );
 }
